@@ -12,8 +12,25 @@ public:
     hashT(int size=10){arr=new Node*[size];}
     void insert(int a);
     void display();
+    void search(int);
     int del(int a);
 };
+
+void hashT::search(int a){
+    int index = a%10;
+    int x =1;
+    Node*p = arr[index];
+    while(p!=NULL){
+        if(p->key==a){
+            cout<< a << " Was found in the index: " << index << " and in Node " << x << "  of the linked list";
+            return;
+        }
+        x++;
+        p=p->next;
+    }
+    cout << a << " was not found in the hashtable"<<endl;
+    return;
+}
 
 int hashT::del(int a){
     int index = a%10;
@@ -88,11 +105,16 @@ int main() {
     hash.insert(16);
     hash.insert(67);
     hash.insert(83);
+    hash.insert(621);
+    hash.insert(6132);
+    hash.insert(1252);
     hash.insert(88);
     hash.insert(219);
     hash.insert(1251);
     hash.insert(245);
     hash.del(11);
     hash.display();
+    cout<<endl;
+    hash.search(245);
     return 0;
 }
