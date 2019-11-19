@@ -34,6 +34,7 @@ int hashT::del(int a){
     else if(ptr->next == nullptr){
         int temp = ptr->key;
         free(ptr);
+        p->next=NULL;
         return temp;
     }
     else{
@@ -91,7 +92,7 @@ int main() {
     hash.insert(219);
     hash.insert(1251);
     hash.insert(245);
-    hash.del(1251);
+    hash.del(11);
     hash.display();
     return 0;
 }
