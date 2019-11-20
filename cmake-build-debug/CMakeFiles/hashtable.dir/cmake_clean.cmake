@@ -1,7 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/hashtable.dir/main.cpp.o"
+  "hashtable.exe"
   "hashtable.pdb"
-  "hashtable"
+  "libhashtable.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

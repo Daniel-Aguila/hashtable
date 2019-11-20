@@ -49,7 +49,10 @@ int hashT::del(int a){
         return -1;
     }
     else if(p == ptr){
-
+        arr[index]=p->next;
+        int temp = ptr->key;
+        free(ptr);
+        return temp;
     }
     else if(ptr->next == nullptr){
         int temp = ptr->key;
@@ -115,8 +118,7 @@ int main() {
     hash.insert(219);
     hash.insert(1251);
     hash.insert(245);
-    hash.display();
-    hash.del(11);
+    hash.del(1);
     hash.display();
     cout<<endl;
     hash.search(245);
