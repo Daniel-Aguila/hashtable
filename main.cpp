@@ -48,6 +48,9 @@ int hashT::del(int a){
         cout << "This number is not in the hashtable" << endl;
         return -1;
     }
+    else if(p == ptr){
+
+    }
     else if(ptr->next == nullptr){
         int temp = ptr->key;
         free(ptr);
@@ -55,7 +58,7 @@ int hashT::del(int a){
         return temp;
     }
     else{
-        p = ptr->next;
+        p->next = ptr->next;
         int temp = ptr->key;
         free(ptr);
         return temp;
@@ -112,6 +115,7 @@ int main() {
     hash.insert(219);
     hash.insert(1251);
     hash.insert(245);
+    hash.display();
     hash.del(11);
     hash.display();
     cout<<endl;
